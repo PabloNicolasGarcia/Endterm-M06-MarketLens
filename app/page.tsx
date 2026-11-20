@@ -1,4 +1,6 @@
 
+export const revalidate = 60;
+
 type Product = {
   id: number;
   title:string;
