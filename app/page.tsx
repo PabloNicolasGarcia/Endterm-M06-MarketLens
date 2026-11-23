@@ -1,10 +1,7 @@
-
 export const revalidate = 60;
 
-type Product = {
-  id: number;
-  title:string;
-}
+import ProductsListClient from './ProductsListClient';
+
 
 export default async function Home() {
   try {
@@ -19,13 +16,7 @@ export default async function Home() {
             <h1>
               MarketLens
             </h1>
-            <ul>
-              {productsData.products.map((product: Product) => (
-                <li key={product.id}>
-                  <h2>{product.title}</h2>
-                </li>
-              ))}
-            </ul>
+            <ProductsListClient products={productsData.products} />
         </main>
     );
 } catch (error: any) {
